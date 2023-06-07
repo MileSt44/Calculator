@@ -1,17 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-operator',
   template: `
-    <button class="operator" (click)="performOperation()">{{ operator }}</button>
+    <button class="operator" (click)="writeOperator()">{{ operator }}</button>
   `,
   styleUrls: ['./operator.component.css']
 })
 export class OperatorComponent {
-  @Input() operator: string = '';
+  @Input() operator: string | undefined;
+  @Output() operatorClicked = new EventEmitter<string>();
 
-  performOperation() {
-    // Logic to handle the operation based on the operator
-    console.log('Operator clicked:', this.operator);
+  writeOperator() {
+    this.operatorClicked.emit(this.operator);
   }
 }

@@ -14,10 +14,12 @@ export class AppComponent {
   onDigitClick(digit: number) {
     this.calculationResult = this.calculationResult === '0' ? digit.toString() : this.calculationResult.toString() + digit.toString();
   }
+  
 
   onOperatorClick(operator: string) {
-    this.calculationResult = operator;
+    this.calculationResult += operator;
   }
+  
 
   calculateResult() {
     // Implement the logic to calculate the result

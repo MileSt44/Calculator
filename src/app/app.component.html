@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator App</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="/styles.css">
 
 </head>
 
@@ -14,34 +14,34 @@
     <input type="text" class="result" [(ngModel)]="calculationResult" readonly>
 
     <div class="row">
-      <app-digit [digit]="7"></app-digit>
-      <app-digit [digit]="8"></app-digit>
-      <app-digit [digit]="9"></app-digit>
-      <app-operator [operator]="'+'"></app-operator>
+      <app-digit [digit]="7" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-digit [digit]="8" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-digit [digit]="9" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-operator [operator]="'+'" (operatorClicked)="onOperatorClick('+')"></app-operator>
 
     </div>
 
     <div class="row">
-      <app-digit [digit]="4"></app-digit>
-      <app-digit [digit]="5"></app-digit>
-      <app-digit [digit]="6"></app-digit>
-      <app-operator [operator]="'-'"></app-operator>
+      <app-digit [digit]="4" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-digit [digit]="5" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-digit [digit]="6" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-operator [operator]="'-'" (operatorClicked)="onOperatorClick('-')"></app-operator>
     </div>
 
     <div class="row">
-      <app-digit [digit]="1"></app-digit>
-      <app-digit [digit]="2"></app-digit>
-      <app-digit [digit]="3"></app-digit>
-      <app-operator [operator]="'*'"></app-operator>
+      <app-digit [digit]="1" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-digit [digit]="2" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-digit [digit]="3" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-operator [operator]="'*'" (operatorClicked)="onOperatorClick('*')"></app-operator>
     </div>
 
     <div class="row">
-      <app-digit [digit]="0"></app-digit>
-      <app-operator [operator]="'/'"></app-operator>
-      <app-operator [operator]="'√'"></app-operator>
-      <app-operator [operator]="'^2'"></app-operator>
-      <app-operator [operator]="'^3'"></app-operator>
-      <button class="operator" (click)="calculateResult()">=</button>
+      <app-digit [digit]="0" (digitClicked)="onDigitClick($event)"></app-digit>
+      <app-operator [operator]="'/'" (operatorClicked)="onOperatorClick('/')"></app-operator>
+      <app-operator [operator]="'√'" (operatorClicked)="onOperatorClick('√')"></app-operator>
+      <app-operator [operator]="'^2'" (operatorClicked)="onOperatorClick('^2')"></app-operator>
+      <app-operator [operator]="'^3'" (operatorClicked)="onOperatorClick('^3')"></app-operator>
+      <button class="operator">=</button>
     </div>
   </div>
 

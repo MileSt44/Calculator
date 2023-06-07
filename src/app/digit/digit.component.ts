@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-digit',
@@ -9,10 +9,10 @@ import { Component, Input } from '@angular/core';
 })
 export class DigitComponent {
   @Input() digit?: number;
-
+  
+  @Output() digitClicked = new EventEmitter<number>();
 
   writeDigit() {
-    // Logic to handle writing the digit
-    console.log('Digit clicked:', this.digit);
+    this.digitClicked.emit(this.digit);
   }
 }
