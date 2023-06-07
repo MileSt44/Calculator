@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html', 
-  styleUrls: ['../styles.css'] 
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   calculationResult: string | number = '0';
 
   onDigitClick(digit: number) {

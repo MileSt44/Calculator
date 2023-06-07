@@ -14,29 +14,33 @@
     <input type="text" class="result" [(ngModel)]="calculationResult" readonly>
 
     <div class="row">
-      <button class="digit" (click)="onDigitClick(7)">7</button>
-      <button class="digit" (click)="onDigitClick(8)">8</button>
-      <button class="digit" (click)="onDigitClick(9)">9</button>
-      <button class="operator" (click)="onOperatorClick('+')">+</button>
+      <app-digit [digit]="7"></app-digit>
+      <app-digit [digit]="8"></app-digit>
+      <app-digit [digit]="9"></app-digit>
+      <app-operator [operator]="'+'"></app-operator>
+
     </div>
 
     <div class="row">
-      <button class="digit" (click)="onDigitClick(4)">4</button>
-      <button class="digit" (click)="onDigitClick(5)">5</button>
-      <button class="digit" (click)="onDigitClick(6)">6</button>
-      <button class="operator" (click)="onOperatorClick('-')">-</button>
+      <app-digit [digit]="4"></app-digit>
+      <app-digit [digit]="5"></app-digit>
+      <app-digit [digit]="6"></app-digit>
+      <app-operator [operator]="'-'"></app-operator>
     </div>
 
     <div class="row">
-      <button class="digit" (click)="onDigitClick(1)">1</button>
-      <button class="digit" (click)="onDigitClick(2)">2</button>
-      <button class="digit" (click)="onDigitClick(3)">3</button>
-      <button class="operator" (click)="onOperatorClick('*')">*</button>
+      <app-digit [digit]="1"></app-digit>
+      <app-digit [digit]="2"></app-digit>
+      <app-digit [digit]="3"></app-digit>
+      <app-operator [operator]="'*'"></app-operator>
     </div>
 
     <div class="row">
-      <button class="digit" (click)="onDigitClick(0)">0</button>
-      <button class="operator" (click)="onOperatorClick('/')">/</button>
+      <app-digit [digit]="0"></app-digit>
+      <app-operator [operator]="'/'"></app-operator>
+      <app-operator [operator]="'√'"></app-operator>
+      <app-operator [operator]="'^2'"></app-operator>
+      <app-operator [operator]="'^3'"></app-operator>
       <button class="operator" (click)="calculateResult()">=</button>
     </div>
   </div>
